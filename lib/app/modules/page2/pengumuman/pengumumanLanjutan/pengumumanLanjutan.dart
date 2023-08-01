@@ -112,7 +112,7 @@ final PengumumanApi _api = PengumumanApi();
             future: fetchDetailPengumuman(),
             builder: (context, snapshot) {
               if(snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               } else if (!snapshot.hasError && snapshot.hasData) {
@@ -184,7 +184,7 @@ final PengumumanApi _api = PengumumanApi();
                   ],
                 );          
               } else {
-                return Text('Belum ada pengumuman');
+                return const Text('Belum ada pengumuman');
               }
             }
           ),

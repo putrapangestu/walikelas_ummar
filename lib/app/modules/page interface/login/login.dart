@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -113,13 +112,13 @@ class _BodyState extends State<Body> {
       future: checkLoggedIn(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Scaffold(
+          return const Scaffold(
             body: Center(
               child: CircularProgressIndicator(),
             ),
           );
         } else if (snapshot.hasData && snapshot.data!) {
-          return Home();
+          return const Home();
         } else {
           return LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
@@ -306,8 +305,9 @@ class PasswordTextField extends StatefulWidget {
   @override
   // ignore: library_private_types_in_public_api
   final TextEditingController passwordController;
-  PasswordTextField({required this.passwordController});
+  const PasswordTextField({super.key, required this.passwordController});
 
+  @override
   _PasswordTextFieldState createState() => _PasswordTextFieldState();
 }
 
@@ -332,7 +332,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
           onPressed: _togglePasswordVisibility,
         ),
         hintText: 'Password',
-        contentPadding: EdgeInsets.all(10),
+        contentPadding: const EdgeInsets.all(10),
         hintStyle: const TextStyle(
           color: Colors.grey,
           fontWeight: FontWeight.w500,

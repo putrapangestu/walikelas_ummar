@@ -106,7 +106,7 @@ class _AgendaState extends State<Agenda> {
             builder: (context, snapshot) {
               if(snapshot.connectionState == ConnectionState.waiting)
               {
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               } else if(!snapshot.hasError && snapshot.hasData) {
@@ -255,7 +255,7 @@ class _AgendaState extends State<Agenda> {
                   ],
                 );
               } else {
-                return Text('Tidak ada agenda yang terdaftar');
+                return const Text('Tidak ada agenda yang terdaftar');
               }
             },
           );

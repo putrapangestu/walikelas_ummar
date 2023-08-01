@@ -149,7 +149,7 @@ class _PengumumanState extends State<Pengumuman> {
             future: fetchPengumuman(),
             builder: (context, snapshot) {
               if(snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               } else if (!snapshot.hasError && snapshot.hasData) {
@@ -269,13 +269,13 @@ class _PengumumanState extends State<Pengumuman> {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 35,
                     )
                   ],
                 );          
               } else {
-                return Text('Belum ada pengumuman');
+                return const Text('Belum ada pengumuman');
               }
             }
           ),

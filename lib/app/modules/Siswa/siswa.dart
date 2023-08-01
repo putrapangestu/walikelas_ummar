@@ -171,7 +171,7 @@ class _SiswaState extends State<Siswa> {
                       builder: (context, snapshot) {
                         if(snapshot.connectionState == ConnectionState.waiting)
                         {
-                          return  Center(
+                          return  const Center(
                               child: CircularProgressIndicator(),
                           );
                         } else if(!snapshot.hasError && snapshot.hasData) {
@@ -297,6 +297,7 @@ class DialogSiswa extends StatefulWidget {
 
   const DialogSiswa({Key? key, required this.id}) : super(key: key);
 
+  @override
   State<DialogSiswa> createState() => _DialogSiswaState();
 }
 
@@ -344,7 +345,7 @@ class _DialogSiswaState extends State<DialogSiswa> {
       future: fetchDetailSiswa(),
       builder: (context, snapshot) {
         if(snapshot.connectionState == ConnectionState.waiting){
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         }else if(!snapshot.hasError && snapshot.hasData)
@@ -558,7 +559,7 @@ class _DialogSiswaState extends State<DialogSiswa> {
             ),
           );
         } else {
-          return Center(child: Text('Belum ada data yang terkait'));
+          return const Center(child: Text('Belum ada data yang terkait'));
         }
     });
   }

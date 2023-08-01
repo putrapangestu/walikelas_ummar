@@ -104,7 +104,7 @@ class _AgendaLanjutanState extends State<AgendaLanjutan> {
         future: fetchDetailAgenda(),
         builder: (context, snapshot) {
           if(snapshot.connectionState == ConnectionState.waiting){
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           } else if (!snapshot.hasError && snapshot.hasData) {
@@ -237,7 +237,7 @@ class _AgendaLanjutanState extends State<AgendaLanjutan> {
               ],
             );
           } else {
-            return Text('Tidak ada data tentang agenda ini');
+            return const Text('Tidak ada data tentang agenda ini');
           }
         },
       )

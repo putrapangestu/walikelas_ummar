@@ -34,13 +34,13 @@ class _IntroductionState extends State<Introduction> {
       future: checkedFirst(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Scaffold(
+          return const Scaffold(
             body: Center(
               child: CircularProgressIndicator(),
             ),
           );
         } else if (snapshot.hasData && snapshot.data!) {
-          return Login();
+          return const Login();
         } else {
           return LayoutBuilder(
             builder: (context, constraints) {

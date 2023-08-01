@@ -252,8 +252,8 @@ class _BodyState extends State<Body> {
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         SizedBox(width: 10),
                         Icon(Icons.search, color: Color(0xff8F4552)),
                         SizedBox(width: 10),

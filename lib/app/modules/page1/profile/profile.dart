@@ -1,6 +1,5 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:file_picker/file_picker.dart';
@@ -89,7 +88,7 @@ class _BodyState extends State<Body> {
         );
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Berhasil logout'),
+            content: const Text('Berhasil logout'),
             backgroundColor: Colors.green.shade300,
           ),
         );
@@ -241,9 +240,9 @@ class _BodyState extends State<Body> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.end,
-                          children: const [
+                          children: [
                             Text(
                               'Profil Wali Kelas',
                               style: TextStyle(
@@ -503,11 +502,11 @@ class _BodyState extends State<Body> {
                                           bottom: 0,
                                           right: 0,
                                           child: Container(
-                                            decoration: BoxDecoration(
+                                            decoration: const BoxDecoration(
                                                 shape: BoxShape.circle,
                                                 color: Colors.orange),
-                                            child: Padding(
-                                              padding: const EdgeInsets.all(5.0),
+                                            child: const Padding(
+                                              padding: EdgeInsets.all(5.0),
                                               child: Icon(
                                                 Icons.camera_alt,
                                                 size: 15,
@@ -840,7 +839,7 @@ class _BodyState extends State<Body> {
             ]);
           });
         } else {
-          return Text('Tidak ada data');
+          return const Text('Tidak ada data');
         }
       },
     );
